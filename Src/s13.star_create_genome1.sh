@@ -19,7 +19,7 @@ STAR \
 	--runMode genomeGenerate \
 	--runThreadN $1 \
 	--genomeDir $GENOME_1_DIR \
-	--genomeFastaFiles "$REFERENCE_DIR/dm6.fa" \
+	--genomeFastaFiles "$REFERENCE_DIR/Drosophila_melanogaster.BDGP6.dna.toplevel.fa" \
 	--sjdbOverhang $((READ_LEN-1)) \
-	--sjdbGTFfile "$REFERENCE_DIR/dm6.gtf" \
+	--sjdbGTFfile "$REFERENCE_DIR/Drosophila_melanogaster.BDGP6.83.gtf" \
 	--outFileNamePrefix "$GENOME_1_DIR/"

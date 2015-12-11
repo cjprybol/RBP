@@ -10,4 +10,4 @@ if [ ! -d "$OUT_DIR" ];
                 mkdir "$OUT_DIR"
 fi
 
-kallisto index --make-unique --index=$OUT_DIR/index $BASE/Data/dm6.cdna.fa
+kallisto index --make-unique --index=$OUT_DIR/index $BASE/Data/Drosophila_melanogaster.BDGP6.cdna.all.fa

@@ -12,9 +12,9 @@ READ_LEN=76
 STAR \
 	--runMode genomeGenerate \
 	--genomeDir $GENOME_2_DIR \
-	--genomeFastaFiles "$REFERENCE_DIR/dm6.fa" \
+	--genomeFastaFiles "$REFERENCE_DIR/Drosophila_melanogaster.BDGP6.dna.toplevel.fa" \
 	--sjdbOverhang $((READ_LEN-1)) \
-	--sjdbGTFfile "$REFERENCE_DIR/dm6.gtf" \
+	--sjdbGTFfile "$REFERENCE_DIR/Drosophila_melanogaster.BDGP6.83.gtf" \
 	--sjdbFileChrStartEnd "$GENOME_2_DIR/first_pass_joined_SJ.out.tab" \
 	--runThreadN $1 \
 	--outFileNamePrefix "$GENOME_2_DIR/"

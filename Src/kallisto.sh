@@ -28,6 +28,6 @@ kallisto \
     --index=$1 \
     --output-dir=$2 \
     --bias \
-    --bootstrap-samples=10000 \
+    --bootstrap-samples=1000 \
     --threads=$3 \
     $4 $5
