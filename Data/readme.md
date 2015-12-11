@@ -1,0 +1,19 @@
+# Acquire data
+- UCSC genome browser
+- clade: insect
+- genome: D. melanogaster
+- assembly: Aug. 2014 (BDGP Release 6 + ISO1 MT/dm6)
+- group: All Tracks
+    - dm6.fa
+        - track: Assembly
+        - table: gold
+        - output format: sequence
+    - dm6.gtf
+        - track: RefSeq Genes
+        - table: refGene
+        - output format: GTF - gene transfer format
+    - dm6.cdna.fa
+        - track: RefSeq Genes
+        - table: refGene
+        - output format: sequence
+        - accept as is settings on next 2 pages

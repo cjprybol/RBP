@@ -21,5 +21,5 @@ STAR \
 	--genomeDir $GENOME_1_DIR \
 	--genomeFastaFiles "$REFERENCE_DIR/dm6.fa" \
 	--sjdbOverhang $((READ_LEN-1)) \
-	--sjdbGTFfile "$REFERENCE_DIR/genes.gtf" \
+	--sjdbGTFfile "$REFERENCE_DIR/dm6.gtf" \
 	--outFileNamePrefix "$GENOME_1_DIR/"
