@@ -26,7 +26,7 @@ OUT_DIR="$BASE/Kallisto"
 #     --plaintext               Output plaintext instead of HDF5
 
 num_cores=$1
-total_memory=20
+total_memory=24
 mem_per_core=$(($total_memory/$num_cores))
 
 parallel --plus \

@@ -12,7 +12,7 @@ if [ ! -d "$PASS_2_DIR" ];
 fi
 
 num_cores=$1
-total_memory=40
+total_memory=16
 mem_per_core=$(($total_memory/$num_cores))
 
 parallel --plus \
