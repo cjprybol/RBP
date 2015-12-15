@@ -11,6 +11,12 @@ $pre -l h_vmem=4G -pe shm 4 s13.star_create_genome1.sh 4
 $pre s15.prep_SJ.sh
 $pre -l h_vmem=4G -pe shm 4 s16.star_create_genome2.sh 4
 ./s17.star_pass2.sh 8
-$pre -l h_vmem=4G -pe shm 8 s18.bam_filter.sh 8
-$pre -l h_vmem=20G s20.kallisto_index.sh
-./s21.kallisto_quantify.sh 8
+$pre -l h_vmem=4G -pe shm 4 s18.pre_filter_flagstat.sh 4
+$pre -l h_vmem=16G -pe shm 4 s19.bam_filter.sh 4
+
+$pre -l h_vmem=48G s22.freebayes.sh
+$pre -l h_vmem=48G s22.mpileup.sh
+
+
+$pre -l h_vmem=20G s30.kallisto_index.sh
+./s31.kallisto_quantify.sh 8

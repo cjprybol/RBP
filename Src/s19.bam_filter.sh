@@ -23,6 +23,11 @@ parallel --jobs $1 --plus \
 	samtools view \
 	-q 20 \
 	-F 1804 \
-	-b \
-	{} '>' $BAM_OUT/'{/...}'.filtered.bam \
+	-buh \
+	{} \
+	'|' samtools sort \
+	-T $BAM_OUT/'{/...}'.sort_temp \
+	-O bam \
+	-o $BAM_OUT/'{/...}'.sorted.filtered.bam \
+	- \
 	::: "$(ls "$BAM_IN"/*.Aligned.out.bam)"

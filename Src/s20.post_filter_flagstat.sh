@@ -3,10 +3,16 @@
 BASE="$( dirname "$(pwd)" )"
 
 INDIR="$BASE/SortedBam"
+OUTDIR="$BASE/SortedBamFlagstat"
+
+if [ ! -d "$OUTDIR" ];
+        then
+                mkdir "$OUTDIR"
+fi
 
 parallel --jobs $1 --plus \
 	samtools \
 	flagstat \
 	{} \
-	'>' '{..}'.flagstat.out \
+	'>' $OUTDIR/'{/..}'.flagstat.out \
 	::: "$(ls "$INDIR"/*.filtered.bam)"
