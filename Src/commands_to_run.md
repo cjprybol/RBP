@@ -15,7 +15,6 @@ $pre -l h_vmem=4G -pe shm 4 s18.pre_filter_flagstat.sh 4
 $pre -l h_vmem=16G -pe shm 4 s19.bam_filter.sh 4
 
 $pre -l h_vmem=48G s22.freebayes.sh
-$pre -l h_vmem=48G s22.mpileup.sh
 
 
 $pre -l h_vmem=20G s30.kallisto_index.sh
