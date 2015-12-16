@@ -14,7 +14,8 @@ $pre -l h_vmem=4G -pe shm 4 s16.star_create_genome2.sh 4
 $pre -l h_vmem=4G -pe shm 4 s18.pre_filter_flagstat.sh 4
 $pre -l h_vmem=16G -pe shm 4 s19.bam_filter.sh 4
 
-$pre -l h_vmem=48G s22.freebayes.sh
+$pre -l h_vmem=12G -l h_rt=96:00:00 s22.freebayes.sh
+$pre -l h_vmem=16G -pe shm 8 -l h_rt=96:00:00 s22.freebayes_individual.sh 8
 
 
 $pre -l h_vmem=20G s30.kallisto_index.sh

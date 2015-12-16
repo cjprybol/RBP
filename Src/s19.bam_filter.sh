@@ -31,3 +31,5 @@ parallel --jobs $1 --plus \
 	-o $BAM_OUT/'{/...}'.sorted.filtered.bam \
 	- \
 	::: "$(ls "$BAM_IN"/*.Aligned.out.bam)"
+
+# index these bam files now!
