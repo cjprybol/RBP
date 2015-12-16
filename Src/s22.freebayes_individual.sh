@@ -17,5 +17,6 @@ REFERENCE_DIR="$BASE/Data"
 parallel --plus --jobs $1 \
 	freebayes \
 	--fasta-reference "$REFERENCE_DIR/Drosophila_melanogaster.BDGP6.dna.toplevel.fa" \
+	--targets $REFERENCE_DIR/dm3_AG_sites_converted.bed \
 	'{}' '>' $OUTDIR/'{/...}'.freebayes.vcf \
 	::: $(ls "$INDIR"/*.sorted.filtered.bam)

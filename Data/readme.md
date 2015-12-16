@@ -16,7 +16,7 @@ mart_export.txt
 Fly_AG_all_dm3_v2.txt
 - http://web.stanford.edu/~gokulr/database/Fly_AG_all_dm3_v2.txt
 - by comparing http://web.stanford.edu/~gokulr/database/Fly_AG_all_dm3.bed and http://web.stanford.edu/~gokulr/database/Fly_AG_all_dm3_v2.txt could determine that start, end should be pos-1, pos, and not pos, pos+1 in order to convert v2 to bed
-- `awk '{FS="\t"}{OFS="\t"}{print $1, $2-1, $2, $3, 0, $4}' Fly_AG_all_dm3_v2.txt | sed "1d" > Fly_AG_all_dm3_v2.converted.bed`
+- `awk '{FS="\t"}{OFS="\t"}{print $1, $2-1, $2, $3, 0, $4}' Fly_AG_all_dm3_v2.txt | sed "1d" > Fly_AG_all_dm3_v2.reformat.bed`
 - run Fly_AG_all_dm3_v2.converted.bed through https://genome.ucsc.edu/cgi-bin/hgLiftOver
 	- Original Genome: D. melanogaster
 	- Original Assembly: Apr. 2006 (BDGP R5/dm3)
@@ -26,3 +26,9 @@ Fly_AG_all_dm3_v2.txt
 	- submit file
 	- download results and rename file to dm3_AG_sites_converted.bed
 		- downloaded file was named `hglft_genome_64dc_b0590.bed` in my particular case
+	- `sed -i 's/^chr//' dm3_AG_sites_converted.bed`
+
+to confirm that we are getting the right sites:
+bedtools getfasta -s -fi Drosophila_melanogaster.BDGP6.dna.toplevel.fa -bed dm3_AG_sites_converted.bed -fo a_check.fasta
+
+observe that all fasta lines are in fact A nucleotides

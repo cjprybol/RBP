@@ -32,4 +32,6 @@ parallel --jobs $1 --plus \
 	- \
 	::: "$(ls "$BAM_IN"/*.Aligned.out.bam)"
 
-# index these bam files now!
+parallel --jobs $1 --plus \
+	samtools index {} \
+	::: "$(ls $BAM_OUT/*.sorted.filtered.bam)"
